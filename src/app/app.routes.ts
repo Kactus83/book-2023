@@ -26,6 +26,7 @@ export const appRoutes: Route[] = [
             layout: 'empty'
         },
         children: [
+            {path: 'home', loadChildren: () => import('./modules/home/home.routes')},
         ]
     }
 ];

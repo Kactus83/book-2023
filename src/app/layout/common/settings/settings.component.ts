@@ -5,8 +5,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { Router } from '@angular/router';
 import { CoreDrawerComponent } from '../../../core/components/drawer/drawer.component';
-import { Scheme, Theme, Themes, CoreConfig } from '../../../core/config/config.types';
-import { ConfigService } from '../../../core/config/config.service';
+import { Scheme, Theme, Themes, CoreConfig } from '../../../core/services/config/config.types';
+import { ConfigService } from '../../../core/services/config/config.service';
 
 import { Subject, takeUntil } from 'rxjs';
 
@@ -48,7 +48,7 @@ export class SettingsComponent implements OnInit, OnDestroy
      */
     constructor(
         private _router: Router,
-        private _fuseConfigService: ConfigService,
+        private configService: ConfigService,
     )
     {
     }
@@ -63,7 +63,7 @@ export class SettingsComponent implements OnInit, OnDestroy
     ngOnInit(): void
     {
         // Subscribe to config changes
-        this._fuseConfigService.config$
+        this.configService.config$
             .pipe(takeUntil(this._unsubscribeAll))
             .subscribe((config: CoreConfig) =>
             {
@@ -102,7 +102,7 @@ export class SettingsComponent implements OnInit, OnDestroy
         }).then(() =>
         {
             // Set the config
-            this._fuseConfigService.config = {layout};
+            this.configService.config = {layout};
         });
     }
 
@@ -113,7 +113,7 @@ export class SettingsComponent implements OnInit, OnDestroy
      */
     setScheme(scheme: Scheme): void
     {
-        this._fuseConfigService.config = {scheme};
+        this.configService.config = {scheme};
     }
 
     /**
@@ -123,6 +123,6 @@ export class SettingsComponent implements OnInit, OnDestroy
      */
     setTheme(theme: Theme): void
     {
-        this._fuseConfigService.config = {theme};
+        this.configService.config = {theme};
     }
 }
