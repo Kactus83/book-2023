@@ -1,10 +1,10 @@
 import { DOCUMENT, NgIf } from '@angular/common';
 import { Component, Inject, OnDestroy, OnInit, Renderer2, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
-import { ConfigService } from '../core/config/config.service';
-import { CoreConfig } from '../core/config/config.types';
-import { MediaWatcherService } from '../core/media-watcher/media-watcher.service';
-import { PlatformService } from '../core/platform/platform.service';
+import { ConfigService } from '../core/services/config/config.service';
+import { CoreConfig } from '../core/services/config/config.types';
+import { MediaWatcherService } from '../core/services/media-watcher/media-watcher.service';
+import { PlatformService } from '../core/services/platform/platform.service';
 import { CORE_VERSION } from '../core/version/core-version';
 import { combineLatest, filter, map, Subject, takeUntil } from 'rxjs';
 import { SettingsComponent } from './common/settings/settings.component';

@@ -3,7 +3,7 @@ import { BooleanInput, coerceBooleanProperty } from '@angular/cdk/coercion';
 import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, OnChanges, OnDestroy, OnInit, Output, Renderer2, SimpleChanges, ViewEncapsulation } from '@angular/core';
 import { CoreDrawerService } from './drawer.service';
 import { CoreDrawerMode, CoreDrawerPosition } from './drawer.types';
-import { CoreUtilsService } from '../../utils/utils.service';
+import { CoreUtilsService } from '../../services/utils/utils.service';
 
 @Component({
     selector     : 'core-drawer',
