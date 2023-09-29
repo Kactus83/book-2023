@@ -6,6 +6,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { PreloadAllModules, provideRouter, withInMemoryScrolling, withPreloading } from '@angular/router';
 import { provideCore } from './core/core.provider';
 import { appRoutes } from './app.routes';
+import { provideIcons } from './core/services/icons/icons.provider';
 
 export const appConfig: ApplicationConfig = {
     providers: [
@@ -38,6 +39,7 @@ export const appConfig: ApplicationConfig = {
 
 
         // Core
+        provideIcons(),
         provideCore({
             core   : {
                 layout : 'classy',
