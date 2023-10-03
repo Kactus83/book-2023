@@ -1,27 +1,27 @@
 /* Variables */
 :root {
-    --fuse-drawer-width: 320px;
+    --core-drawer-width: 320px;
 }
 
-fuse-drawer {
+core-drawer {
     position: relative;
     display: flex;
     flex-direction: column;
     flex: 1 1 auto;
-    width: var(--fuse-drawer-width);
-    min-width: var(--fuse-drawer-width);
-    max-width: var(--fuse-drawer-width);
+    width: var(--core-drawer-width);
+    min-width: var(--core-drawer-width);
+    max-width: var(--core-drawer-width);
     z-index: 300;
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .35);
     @apply bg-card;
 
     /* Animations */
-    &.fuse-drawer-animations-enabled {
+    &.core-drawer-animations-enabled {
         transition-duration: 400ms;
         transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
         transition-property: visibility, margin-left, margin-right, transform, width, max-width, min-width;
 
-        .fuse-drawer-content {
+        .core-drawer-content {
             transition-duration: 400ms;
             transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
             transition-property: width, max-width, min-width;
@@ -29,75 +29,75 @@ fuse-drawer {
     }
 
     /* Over mode */
-    &.fuse-drawer-mode-over {
+    &.core-drawer-mode-over {
         position: absolute;
         top: 0;
         bottom: 0;
 
         /* Fixed mode */
-        &.fuse-drawer-fixed {
+        &.core-drawer-fixed {
             position: fixed;
         }
     }
 
     /* Left position */
-    &.fuse-drawer-position-left {
+    &.core-drawer-position-left {
 
         /* Side mode */
-        &.fuse-drawer-mode-side {
-            margin-left: calc(var(--fuse-drawer-width) * -1);
+        &.core-drawer-mode-side {
+            margin-left: calc(var(--core-drawer-width) * -1);
 
-            &.fuse-drawer-opened {
+            &.core-drawer-opened {
                 margin-left: 0;
             }
         }
 
         /* Over mode */
-        &.fuse-drawer-mode-over {
+        &.core-drawer-mode-over {
             left: 0;
             transform: translate3d(-100%, 0, 0);
 
-            &.fuse-drawer-opened {
+            &.core-drawer-opened {
                 transform: translate3d(0, 0, 0);
             }
         }
 
         /* Content */
-        .fuse-drawer-content {
+        .core-drawer-content {
             left: 0;
         }
     }
 
     /* Right position */
-    &.fuse-drawer-position-right {
+    &.core-drawer-position-right {
 
         /* Side mode */
-        &.fuse-drawer-mode-side {
-            margin-right: calc(var(--fuse-drawer-width) * -1);
+        &.core-drawer-mode-side {
+            margin-right: calc(var(--core-drawer-width) * -1);
 
-            &.fuse-drawer-opened {
+            &.core-drawer-opened {
                 margin-right: 0;
             }
         }
 
         /* Over mode */
-        &.fuse-drawer-mode-over {
+        &.core-drawer-mode-over {
             right: 0;
             transform: translate3d(100%, 0, 0);
 
-            &.fuse-drawer-opened {
+            &.core-drawer-opened {
                 transform: translate3d(0, 0, 0);
             }
         }
 
         /* Content */
-        .fuse-drawer-content {
+        .core-drawer-content {
             right: 0;
         }
     }
 
     /* Content */
-    .fuse-drawer-content {
+    .core-drawer-content {
         position: absolute;
         display: flex;
         flex: 1 1 auto;
@@ -111,7 +111,7 @@ fuse-drawer {
 }
 
 /* Overlay */
-.fuse-drawer-overlay {
+.core-drawer-overlay {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -122,12 +122,12 @@ fuse-drawer {
     background-color: rgba(0, 0, 0, 0.6);
 
     /* Fixed mode */
-    &.fuse-drawer-overlay-fixed {
+    &.core-drawer-overlay-fixed {
         position: fixed;
     }
 
     /* Transparent overlay */
-    &.fuse-drawer-overlay-transparent {
+    &.core-drawer-overlay-transparent {
         background-color: transparent;
     }
 }
