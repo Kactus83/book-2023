@@ -28,6 +28,8 @@ export const appRoutes: Route[] = [
         children: [
             {path: 'landing', loadChildren: () => import('./modules/landing/landing.routes')},
             {path: 'home', loadChildren: () => import('./modules/home/home.routes')},
+            {path: 'cv', loadChildren: () => import('./modules/cv/cv.routes')},
+            {path: 'web-demo', loadChildren: () => import('./modules/web-demo/web-demo.routes')},
         ]
     }
 ];

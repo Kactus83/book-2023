@@ -1,25 +1,22 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { Router, RouterLink } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 @Component({
-    selector     : 'landing',
-    templateUrl  : './landing.component.html',
+    selector     : 'cv',
+    templateUrl  : './cv.component.html',
     encapsulation: ViewEncapsulation.None,
     standalone   : true,
     imports      : [MatButtonModule, RouterLink, MatIconModule],
+    styleUrls    : ['./cv.component.scss'],
 })
-export class LandingPageComponent
+export class CVComponent
 {
     /**
      * Constructor
      */
-    constructor(private router: Router)
+    constructor()
     {
-    }
-   
-    navigateToHome(): void {
-    this.router.navigate(['/home']);
     }
 }
